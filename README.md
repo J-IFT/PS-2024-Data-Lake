@@ -34,6 +34,9 @@ Zookeeper :
 docker exec -it projet-zookeeper-1 bash
 root@c9d28f3ac276:/opt/zookeeper-3.4.6# bin/zkCli.sh
 
+Hadoop :
+http://localhost:9870/
+
 Kafka :
 docker exec -it projet-kafka-1 kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 docker exec -it projet-kafka-1 kafka-topics.sh --list --bootstrap-server localhost:9092
@@ -46,6 +49,7 @@ docker-compose exec superset superset db upgrade
 docker-compose exec superset superset fab create-admin
 docker exec -it projet-superset-1
 superset init
+Accès : http://localhost:8088/ - admin/admin
 
 Hive :
 $env:HIVE_VERSION = "3.1.3"
@@ -54,7 +58,6 @@ docker exec -it hive4  beeline -u 'jdbc:hive2://hiveserver2:10000/'
 docker exec -it --user=root hive4 bash -c "echo '$(docker inspect -f '{{.NetworkSettings.IPAddress}}' hive4) hiveserver2' >> /etc/hosts"
 docker exec -it hive4  beeline -u 'jdbc:hive2://hiveserver2:10000/'
 CREATE DATABASE IF NOT EXISTS vehicules;
-
 si erreur à la création de la base :
 SHOW DATABASES;
 DESCRIBE DATABASE EXTENDED default;
@@ -74,8 +77,7 @@ VALUES
   ('7fd1ef15-6821-4e07-89fd-3a7725bbd820', 87.1872855, 111.469132, 36, 5, 1703258675),
   ('dce281ae-9455-4597-a23b-c484f6db3e48', -27.155857, -176.110152, 6, 9, 1703258675);
 SELECT * FROM vehicules.position_vehicule;
-
-on peut y  accéder ici : http://localhost:10002/
+Accès : http://localhost:10002/
 
 Résumé :
 

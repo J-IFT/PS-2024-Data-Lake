@@ -28,7 +28,7 @@ Visualisation des données :
 Utilisation d'un outil de visualisation tel que Apache Superset pour créer des tableaux de bord interactifs.
 
 
-Commandes :
+### 🖲️ Commandes :
 
 
 #### Zookeeper :
@@ -38,17 +38,17 @@ docker exec -it projet-zookeeper-1 bash
 root@c9d28f3ac276:/opt/zookeeper-3.4.6# bin/zkCli.sh
 
 
-# Hadoop :
+##### Hadoop :
 
 http://localhost:9870/
 
-# Spark :
+##### Spark :
 
 pip install pyspark
 
 spark.py
 
-# Kafka :
+##### Kafka :
 
 docker exec -it projet-kafka-1 kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 
@@ -61,7 +61,7 @@ docker exec -it projet-kafka-1 kafka-console-producer.sh --topic my-topic --boot
 docker exec -it projet-kafka-1 kafka-console-consumer.sh --topic my-topic --from-beginning --bootstrap-server localhost:9092
 
 
-# Superset :
+##### Superset :
 
 docker-compose exec superset superset db upgrade
 
@@ -74,7 +74,7 @@ superset init
 Accès : http://localhost:8088/ - admin/admin
 
 
-# Hive :
+##### Hive :
 
 $env:HIVE_VERSION = "3.1.3"
 
@@ -118,7 +118,7 @@ SELECT * FROM vehicules.position_vehicule;
 Accès : http://localhost:10002/
 
 
-# Résumé :
+##### Résumé :
 
 Toutes les commandes écrites ci-dessus pour chaque service permettent de les faire fonctionner séparément.
 
